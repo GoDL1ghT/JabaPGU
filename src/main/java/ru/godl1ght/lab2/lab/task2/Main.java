@@ -1,5 +1,6 @@
 package ru.godl1ght.lab2.lab.task2;
 
+// Объединения задач 2.4 и 3.4
 public class Main {
     public static void main(String[] args) {
         // Создаем сотрудников

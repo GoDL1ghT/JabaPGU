@@ -1,5 +1,6 @@
 package ru.godl1ght.lab2.lab.task1;
 
+// Объединение задач 1.5 и 4.3
 public class House {
     // Поле с этажами помечено final, чтобы его нельзя было изменить
     private final int floors;
