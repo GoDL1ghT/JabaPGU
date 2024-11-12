@@ -20,7 +20,6 @@ public class Gun {
             bullets--;
         } else
             System.out.println("Клац!");
-
     }
 
     // Метод для получения текущего количества патронов (по желанию)
