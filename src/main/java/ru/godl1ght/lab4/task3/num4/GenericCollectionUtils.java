@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
+// Чтобы не было варнов при компиляции из-за неявных кастов
 @SuppressWarnings("ALL")
 public class GenericCollectionUtils {
 
