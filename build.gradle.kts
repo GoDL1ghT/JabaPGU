@@ -1,5 +1,3 @@
-import org.gradle.internal.impldep.com.jcraft.jsch.ConfigRepository.defaultConfig
-
 plugins {
     id("java")
 }
