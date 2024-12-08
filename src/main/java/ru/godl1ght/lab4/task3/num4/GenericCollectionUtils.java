@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
-// Чтобы не было варнов при компиляции из-за неявных кастов
+// Чтобы не было варнов при компиляции из-за неявных кастов ниже
 @SuppressWarnings("ALL")
 public class GenericCollectionUtils {
 
@@ -19,7 +19,7 @@ public class GenericCollectionUtils {
     }
 
     public static void main(String[] args) {
-        // 1. Разделение чисел на положительные и отрицательные
+        // разделение чисел на положительные и отрицательные
         List<Integer> numbers = Arrays.asList(1, -3, 7);
         List<List<Integer>> splitNumbers = (List<List<Integer>>) (Object) transformCollection(
                 numbers,
@@ -33,11 +33,8 @@ public class GenericCollectionUtils {
                     List<Integer> positives = new ArrayList<>();
                     List<Integer> negatives = new ArrayList<>();
                     for (Integer number : source) {
-                        if (number > 0) {
-                            positives.add(number);
-                        } else {
-                            negatives.add(number);
-                        }
+                        if (number > 0) positives.add(number);
+                        else negatives.add(number);
                     }
                     result.add(positives);
                     result.add(negatives);
@@ -45,7 +42,7 @@ public class GenericCollectionUtils {
         );
         System.out.println("Разделенные числа: " + splitNumbers);
 
-        // 2. Разделение строк по длине
+        // разделение строк по длине
         List<String> strings = Arrays.asList("qwerty", "asdfg", "zx", "qw");
         List<List<String>> groupedByLength = (List<List<String>>) (Object) transformCollection(
                 strings,
@@ -61,7 +58,7 @@ public class GenericCollectionUtils {
         );
         System.out.println("Строки, сгруппированные по длине: " + groupedByLength);
 
-        // 3. Уникальный набор строк
+        // уникальный набор строк
         List<String> duplicates = Arrays.asList("qwerty", "asdfg", "qwerty", "qw");
         Set<String> uniqueSet = transformCollection(
                 duplicates,

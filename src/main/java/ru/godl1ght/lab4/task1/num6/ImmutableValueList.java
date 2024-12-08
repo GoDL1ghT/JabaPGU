@@ -6,7 +6,7 @@ import java.util.List;
 public final class ImmutableValueList<T> {
     private final List<T> values;
 
-    // Конструктор с varargs (поддерживает массивы)
+    // Конструктор с varargs
     @SafeVarargs
     public ImmutableValueList(T... values) {
         this.values = List.copyOf(List.of(values));
@@ -56,13 +56,12 @@ public final class ImmutableValueList<T> {
         return values;
     }
 
-    // Пример использования
     public static void main(String[] args) {
         // Инициализация разными способами
         ImmutableValueList<Integer> intList = new ImmutableValueList<>(1, 2, 3);
         ImmutableValueList<String> stringList = new ImmutableValueList<>(List.of("A", "B", "C"));
 
-        // Примеры использования методов
+        // Разные методы
         System.out.println("Список чисел: " + intList); // Выводит: [1, 2, 3]
         System.out.println("Список строк: " + stringList); // Выводит: [A, B, C]
 

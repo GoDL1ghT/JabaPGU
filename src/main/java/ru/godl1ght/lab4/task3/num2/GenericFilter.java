@@ -18,17 +18,17 @@ public class GenericFilter {
     }
 
     public static void main(String[] args) {
-        // Пример 1: Фильтрация строк с длиной менее 3 символов
+        // Фильтр строк с длиной < 3 символов
         List<String> strings = List.of("qwerty", "asdfg", "zx");
         List<String> filteredStrings = filter(strings, s -> s.length() >= 3);
         System.out.println("Строки с длиной >= 3 символов: " + filteredStrings);
 
-        // Пример 2: Фильтрация только положительных чисел
+        // Фильтр только положительных чисел
         List<Integer> numbers = List.of(1, -3, 7);
         List<Integer> filteredNumbers = filter(numbers, n -> n > 0);
         System.out.println("Положительные числа: " + filteredNumbers);
 
-        // Пример 3: Фильтрация массивов, где нет положительных элементов
+        // Фильтр массивов без элементов >= 0
         List<int[]> arrays = List.of(
                 new int[]{-1, -2, -3},
                 new int[]{1, -2, 3},
