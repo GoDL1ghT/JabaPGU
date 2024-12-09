@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         // путь к файлу
-        Path path = Path.of("C:\\Users\\sokol\\Desktop\\dev\\JabaPGU\\src\\main\\java\\ru\\godl1ght\\lab5\\task7\\num2\\people.txt");
+        Path path = Path.of("C:\\Users\\user\\IdeaProjects\\JabaPGU\\src\\main\\java\\ru\\godl1ght\\lab5\\task7\\num2\\people.txt");
 
         // читаем данные из файла и обрабатываем их через стрим
         try {
