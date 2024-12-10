@@ -5,14 +5,15 @@ public class Main {
         Fraction fraction1 = new Fraction(3, 4);
         Fraction fraction2 = new Fraction(-6, -8);
 
-        System.out.println(fraction1); // 3/4
-        System.out.println(fraction1.getDecimalValue()); // 0.75
-        System.out.println(fraction1.equals(fraction2)); // true
+        // Проверка корректности
+        FractionUtils.validateFraction(fraction1);
+        FractionUtils.validateFraction(fraction2);
 
-        fraction1.setNumerator(5);
-        fraction1.setDenominator(10);
-        System.out.println(fraction1); // 5/10
-        System.out.println(fraction1.getDecimalValue()); // 0.5
+        System.out.println(fraction1); // 3/4
+        System.out.println(FractionUtils.getDecimalValue(fraction1)); // 0.75
+        System.out.println(FractionUtils.areEqual(fraction1, fraction2)); // true
+
+        System.out.println(FractionUtils.generateHashCode(fraction1));
     }
 }
 

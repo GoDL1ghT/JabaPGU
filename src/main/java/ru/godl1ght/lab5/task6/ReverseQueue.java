@@ -15,19 +15,18 @@ public class ReverseQueue {
 
         System.out.println("Исходная очередь: " + queue);
 
-        // Выводим элементы в обратном порядке
+        // вызов метода для вывода элементов в ревёрсе
         printQueueInReverse(queue);
     }
 
-    public static void printQueueInReverse(Queue<Integer> queue) {
-        Stack<Integer> stack = new Stack<>();
+    public static <T> void printQueueInReverse(Queue<T> queue) {
+        Stack<T> stack = new Stack<>();
 
         // Перемещаем элементы из очереди в стек
         while (!queue.isEmpty()) {
             stack.push(queue.poll());
         }
 
-        // Выводим элементы из стека
         System.out.println("Очередь в обратном порядке:");
         while (!stack.isEmpty()) {
             System.out.print(stack.pop() + " ");

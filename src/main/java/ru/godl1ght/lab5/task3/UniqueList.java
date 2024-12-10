@@ -6,23 +6,22 @@ import java.util.List;
 
 public class UniqueList {
     public static void main(String[] args) {
-        // Пример исходного списка
-        List<Integer> L = Arrays.asList(1, 1, 2, 2, 2, 3, 4, 4, 5, 5, 5, 5, 6);
+//        List<Integer> L = Arrays.asList(1, 1, 2, 2, 2, 3, 4, 4, 5, 5, 5, 5, 6);
+        List<String> L = List.of("a", "a", "b", "b", "c", "c", "c", "d", "e", "e");
 
-        // Обработка списка
-        List<Integer> result = removeDuplicates(L);
+        // Обработка списка через вызов метода
+        List<String> result = removeDuplicates(L);
 
-        // Вывод результата
         System.out.println("Исходный список: " + L);
         System.out.println("Результат: " + result);
     }
 
-    public static List<Integer> removeDuplicates(List<Integer> list) {
+    public static <T> List<T> removeDuplicates(List<T> list) {
         if (list == null || list.isEmpty()) {
             return new ArrayList<>();
         }
 
-        List<Integer> result = new ArrayList<>();
+        List<T> result = new ArrayList<>();
         // Добавляем первый элемент
         result.add(list.get(0));
 

@@ -10,14 +10,13 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        // путь к файлу
         Path path = Path.of("C:\\Users\\user\\IdeaProjects\\JabaPGU\\src\\main\\java\\ru\\godl1ght\\lab5\\task7\\num2\\people.txt");
 
         // читаем данные из файла и обрабатываем их через стрим
         try {
             // создаём стрим из строк файла
             Map<Integer, List<String>> result = Files.lines(path)
-                    // разбиваем строку по двоеточию
+                    // сплитаем строку по двоеточию
                     .map(line -> line.split(":"))
                     // фильтр людей с номером
                     .filter(parts -> parts.length == 2 && !parts[1].isEmpty())
@@ -35,10 +34,8 @@ public class Main {
                             Collectors.mapping(Map.Entry::getKey, Collectors.toList())
                     ));
 
-            // вывод результата
             System.out.println(result);
 
-            // вывод лога при ошибке
         } catch (IOException e) {
             e.printStackTrace();
         }
