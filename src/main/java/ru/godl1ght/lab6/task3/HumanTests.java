@@ -8,7 +8,7 @@ class HumanTests {
         return age >= 1 && age <= 200;
     }
 
-    // Тест на корректность значения возраста (возраст должен быть больше нуля)
+    // Тест возраст должен быть больше нуля
     public static boolean testValidAge(Human h) {
         return h.getAge() > 0;
     }

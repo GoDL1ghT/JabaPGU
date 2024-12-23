@@ -13,7 +13,6 @@ public class Main {
             // Выполняем валидацию объектов
             Validator.validate(human1, human2, person1, person2);
         } catch (ValidationException e) {
-            // Печать сообщения об ошибке
             System.out.println(e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();

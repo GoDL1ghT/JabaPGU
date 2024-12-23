@@ -44,16 +44,14 @@ public class Validator {
         }
     }
 
-    // Метод для генерации сообщений об ошибке
+    // сообщения об ошибке
     private static String getErrorMessage(Method method, Object testObject) {
         if (testObject instanceof Human) {
-            Human h = (Human) testObject;
-            if (method.getName().equals("testAgeRange")) {
+            if (method.getName().equals("testAgeRange"))
                 return "возраст человека не в диапазоне от 1 до 200";
-            }
-            if (method.getName().equals("testValidAge")) {
+
+            if (method.getName().equals("testValidAge"))
                 return "возраст человека должен быть больше нуля";
-            }
         }
         return "неизвестная ошибка";
     }
