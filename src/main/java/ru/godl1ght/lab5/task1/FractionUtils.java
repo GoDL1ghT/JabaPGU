@@ -1,11 +1,11 @@
 package ru.godl1ght.lab5.task1;
 
 public class FractionUtils {
-    private static Double cachedValue = null;
+    static Double cachedValue = null;
 
     // Проверка корректности знаменателя
     public static void validateFraction(Fraction fraction) {
-        if (fraction.getDenominator() == 0) {
+        if (fraction.getDenominator() <= 0) {
             throw new IllegalArgumentException("Denominator cannot be zero");
         }
     }
@@ -13,6 +13,7 @@ public class FractionUtils {
     // Вычисление вещественного значения с кешированием
     public static double getDecimalValue(Fraction fraction) {
         if (cachedValue == null) {
+            System.out.println("1");
             cachedValue = (double) fraction.getNumerator() / fraction.getDenominator();
         }
         return cachedValue;

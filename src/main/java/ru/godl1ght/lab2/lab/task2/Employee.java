@@ -1,34 +1,71 @@
 package ru.godl1ght.lab2.lab.task2;
 
-class Employee {
-    private String name;
+/**
+ * Класс, представляющий сотрудника.
+ */
+public class Employee {
+    private final String name;
     private Department department;
 
-    // Конструктор для создания сотрудника без указания отдела
+    /**
+     * Создает нового сотрудника с указанным именем.
+     *
+     * @param name имя сотрудника, не должно быть null или пустым
+     * @throws IllegalArgumentException если имя null или пустое
+     */
     public Employee(String name) {
+        if (name == null || name.trim().isEmpty())
+            throw new IllegalArgumentException("Имя сотрудника не может быть null или пустым");
+
         this.name = name;
     }
 
-    // Метод для назначения отдела сотруднику
+    /**
+     * Назначает сотрудника в указанный отдел.
+     *
+     * @param department отдел для назначения, не должен быть null
+     * @throws IllegalArgumentException если отдел null
+     */
     public void setDepartment(Department department) {
+        if (department == null) {
+            throw new IllegalArgumentException("Отдел не может быть null");
+        }
+
+        if (this.department != null)
+            this.department.removeEmployee(this);
+
         this.department = department;
-        department.addEmployee(this); // Добавляем сотрудника в отдел
+        department.addEmployee(this);
     }
 
-    // Метод для получения отдела сотрудника
+    /**
+     * Возвращает отдел, в котором работает сотрудник.
+     *
+     * @return отдел сотрудника, может быть null если сотрудник не назначен в отдел
+     */
     public Department getDepartment() {
-        return this.department;
+        return department;
+    }
+
+    /**
+     * Возвращает имя сотрудника.
+     *
+     * @return имя сотрудника
+     */
+    public String getName() {
+        return name;
     }
 
     @Override
     public String toString() {
-        if (this.department != null && this.department.getManager() == this) {
-            return this.name + " начальник отдела " + this.department.getName();
-        } else if (this.department != null) {
-            return this.name + " работает в отделе " + this.department.getName() +
-                    ", начальник которого " + this.department.getManager().name;
-        } else {
-            return this.name + " не назначен в отдел.";
-        }
+        if (department == null)
+            return name + " не назначен в отдел.";
+
+        if (department.getManager() == this)
+            return name + " начальник отдела " + department.getName();
+
+        return name + " работает в отделе " + department.getName()
+                + ", начальник которого " + department.getManager().getName();
     }
+
 }

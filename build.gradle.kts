@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation(platform("org.junit:junit-bom:5.10.0"))
+    implementation(platform("org.junit:junit-bom:5.11.3"))
     implementation("org.junit.jupiter:junit-jupiter")
 }
 

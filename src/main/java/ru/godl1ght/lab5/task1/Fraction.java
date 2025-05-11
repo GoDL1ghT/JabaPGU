@@ -1,8 +1,8 @@
 package ru.godl1ght.lab5.task1;
 
-public class Fraction {
-    private final int numerator;
-    private final int denominator;
+public class Fraction implements FractionInterface {
+    private int numerator;
+    private int denominator;
 
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
@@ -20,5 +20,20 @@ public class Fraction {
     @Override
     public String toString() {
         return numerator + "/" + denominator;
+    }
+
+    @Override
+    public double getDecimalValue() {
+        return FractionUtils.getDecimalValue(this);
+    }
+
+    @Override
+    public void setNumerator(int numerator) {
+        this.numerator = numerator;
+    }
+
+    @Override
+    public void setDenominator(int denominator) {
+        this.denominator = denominator;
     }
 }

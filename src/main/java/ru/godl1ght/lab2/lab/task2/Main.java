@@ -1,7 +1,14 @@
 package ru.godl1ght.lab2.lab.task2;
 
-// Объединения задач 2.4 и 3.4
+/**
+ * Главный класс для демонстрации работы с сотрудниками и отделами.
+ */
 public class Main {
+    /**
+     * Основной метод программы.
+     *
+     * @param args аргументы командной строки (не используются)
+     */
     public static void main(String[] args) {
         // Создаем сотрудников
         Employee petrov = new Employee("Петров");
@@ -22,7 +29,7 @@ public class Main {
         System.out.println(sidorov);
 
         // Получаем и выводим список всех сотрудников отдела через одного из сотрудников
-        System.out.println("\nСписок сотрудников отдела IT:");
+        System.out.println("Список сотрудников отдела IT:");
         for (Employee employee : petrov.getDepartment().getEmployees()) {
             System.out.println(employee);
         }
