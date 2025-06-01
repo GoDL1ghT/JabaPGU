@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+    <name>ImmutableValueList</name>
+    <description>Неизменяемый список целочисленных значений</description>
+
+    <constructors>
+        <constructor>
+            <description>Создает новый неизменяемый список из переданных значений</description>
+            <params>
+                <param>
+                    <name>values</name>
+                    <type>int...</type>
+                    <description>массив или последовательность целых чисел</description>
+                </param>
+            </params>
+        </constructor>
+        <constructor>
+            <description>Создает новый неизменяемый список из переданного списка</description>
+            <params>
+                <param>
+                    <name>otherList</name>
+                    <type>List&lt;Integer&gt;</type>
+                    <description>список целых чисел, не может быть null</description>
+                </param>
+            </params>
+            <throws>
+                <exception>
+                    <type>NullPointerException</type>
+                    <description>если otherList равен null</description>
+                </exception>
+            </throws>
+        </constructor>
+    </constructors>
+
+    <methods>
+        <method>
+            <name>getValueAt</name>
+            <return>int</return>
+            <description>Возвращает значение по указанной позиции</description>
+            <params>
+                <param>
+                    <name>position</name>
+                    <type>int</type>
+                    <description>индекс элемента</description>
+                </param>
+            </params>
+            <throws>
+                <exception>
+                    <type>IndexOutOfBoundsException</type>
+                    <description>если позиция выходит за границы списка</description>
+                </exception>
+            </throws>
+        </method>
+        <method>
+            <name>replaceValueAt</name>
+            <return>ImmutableValueList</return>
+            <description>Создает новый список с замененным значением на указанной позиции</description>
+            <params>
+                <param>
+                    <name>position</name>
+                    <type>int</type>
+                    <description>индекс заменяемого элемента</description>
+                </param>
+                <param>
+                    <name>newValue</name>
+                    <type>int</type>
+                    <description>новое значение</description>
+                </param>
+            </params>
+            <throws>
+                <exception>
+                    <type>IndexOutOfBoundsException</type>
+                    <description>если позиция выходит за границы списка</description>
+                </exception>
+            </throws>
+        </method>
+        <method>
+            <name>isEmpty</name>
+            <return>boolean</return>
+            <description>Проверяет, является ли список пустым</description>
+        </method>
+        <method>
+            <name>size</name>
+            <return>int</return>
+            <description>Возвращает размер списка</description>
+        </method>
+        <method>
+            <name>getAll</name>
+            <return>int[]</return>
+            <description>Возвращает копию массива значений</description>
+        </method>
+        <method>
+            <name>toString</name>
+            <return>String</return>
+            <description>Возвращает строковое представление списка</description>
+        </method>
+    </methods>
+
+    <properties>
+        <property>
+            <name>Неизменяемость</name>
+            <description>Все методы, изменяющие состояние, возвращают новый объект</description>
+        </property>
+        <property>
+            <name>Потокобезопасность</name>
+            <description>Класс является потокобезопасным благодаря неизменяемости</description>
+        </property>
+    </properties>
+
+    <example>
+        <code>
+            ImmutableValueList list = new ImmutableValueList(1, 2, 3);
+            System.out.println(list.getValueAt(1)); // Выведет: 2
+            ImmutableValueList newList = list.replaceValueAt(1, 42);
+            System.out.println(newList); // Выведет: [1, 42, 3]
+        </code>
+    </example>
+</class>

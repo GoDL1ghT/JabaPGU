@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+    <name>Gun</name>
+    <description>Класс, представляющий пистолет как вид оружия. Наследуется от абстрактного класса Weapon.</description>
+    <constructors>
+        <constructor>
+            <name>Gun</name>
+            <params>
+                <param>
+                    <name>ammo</name>
+                    <description>количество патронов, должно быть неотрицательным</description>
+                </param>
+            </params>
+            <throws>
+                <exception>IllegalArgumentException если количество патронов отрицательное</exception>
+            </throws>
+        </constructor>
+        <constructor>
+            <name>Gun</name>
+            <description>Конструктор без указания количества патронов (по умолчанию 5 патронов).</description>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>shoot</name>
+            <description>Производит выстрел из пистолета. Уменьшает количество патронов на 1 при каждом выстреле. Если
+                патронов нет, имитирует осечку.
+            </description>
+        </method>
+        <method>
+            <name>main</name>
+            <description>Демонстрирует работу класса Gun. Позволяет пользователю ввести количество патронов и производит
+                серию выстрелов.
+            </description>
+            <params>
+                <param>
+                    <name>args</name>
+                    <description>аргументы командной строки (не используются)</description>
+                </param>
+            </params>
+        </method>
+    </methods>
+</class>

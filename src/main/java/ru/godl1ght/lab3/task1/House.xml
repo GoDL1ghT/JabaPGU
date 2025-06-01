@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+    <name>House</name>
+    <package>ru.godl1ght.lab3.task1</package>
+    <description>Класс, представляющий дом с определенным количеством этажей</description>
+
+    <fields>
+        <field>
+            <name>floors</name>
+            <type>int</type>
+            <description>Количество этажей в доме</description>
+            <final>true</final>
+        </field>
+    </fields>
+
+    <constructors>
+        <constructor>
+            <params>
+                <param>
+                    <name>floors</name>
+                    <type>int</type>
+                    <description>количество этажей в доме</description>
+                </param>
+            </params>
+            <throws>
+                <exception>
+                    <type>IllegalArgumentException</type>
+                    <description>если количество этажей меньше 1</description>
+                </exception>
+            </throws>
+        </constructor>
+    </constructors>
+
+    <methods>
+        <method>
+            <name>getFloorTextForm</name>
+            <access>private</access>
+            <return>
+                <type>String</type>
+                <description>строку с количеством этажей и правильной формой слова</description>
+            </return>
+        </method>
+
+        <method>
+            <name>toString</name>
+            <access>public</access>
+            <override>true</override>
+            <return>
+                <type>String</type>
+                <description>строковое представление дома с количеством этажей</description>
+            </return>
+        </method>
+
+        <method>
+            <name>main</name>
+            <access>public static</access>
+            <params>
+                <param>
+                    <name>args</name>
+                    <type>String[]</type>
+                    <description>аргументы командной строки (не используются)</description>
+                </param>
+            </params>
+            <description>Основной метод для демонстрации работы класса. Осуществляет ввод данных с клавиатуры и
+                обработку возможных ошибок.
+            </description>
+        </method>
+    </methods>
+</class>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classes>
+    <class>
+        <name>Gun</name>
+        <description>Класс, представляющий пистолет с ограниченным количеством патронов.</description>
+        <constructors>
+            <constructor>
+                <params>
+                    <param>
+                        <name>bullets</name>
+                        <type>int</type>
+                        <description>начальное количество патронов</description>
+                    </param>
+                    <param>
+                        <name>maxBullets</name>
+                        <type>int</type>
+                        <description>максимальная вместимость пистолета</description>
+                    </param>
+                </params>
+                <throws>
+                    <exception>
+                        <type>IllegalArgumentException</type>
+                        <description>если bullets или maxBullets отрицательные, или maxBullets равен нулю</description>
+                    </exception>
+                </throws>
+            </constructor>
+            <constructor>
+                <description>Создает пистолет с 5 патронами и максимальной вместимостью 5</description>
+            </constructor>
+        </constructors>
+        <methods>
+            <method>
+                <name>shoot</name>
+                <description>Производит выстрел из пистолета. Если патроны есть - уменьшает их количество на 1.
+                </description>
+            </method>
+            <method>
+                <name>reload</name>
+                <params>
+                    <param>
+                        <name>additionalBullets</name>
+                        <type>int</type>
+                        <description>количество добавляемых патронов</description>
+                    </param>
+                </params>
+                <returns>количество патронов, которые не поместились в пистолет</returns>
+                <throws>
+                    <exception>
+                        <type>IllegalArgumentException</type>
+                        <description>если additionalBullets отрицательное</description>
+                    </exception>
+                </throws>
+            </method>
+            <method>
+                <name>unload</name>
+                <returns>количество извлеченных патронов</returns>
+                <description>Полностью разряжает пистолет.</description>
+            </method>
+            <method>
+                <name>getBullets</name>
+                <returns>текущее количество патронов</returns>
+                <description>Возвращает текущее количество патронов в пистолете.</description>
+            </method>
+            <method>
+                <name>getMaxBullets</name>
+                <returns>максимальное количество патронов</returns>
+                <description>Возвращает максимальную вместимость пистолета.</description>
+            </method>
+            <method>
+                <name>isLoaded</name>
+                <returns>true, если в пистолете есть патроны, иначе false</returns>
+                <description>Проверяет, заряжен ли пистолет.</description>
+            </method>
+        </methods>
+    </class>
+</classes>

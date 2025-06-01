@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+    <name>AutomaticGun</name>
+    <package>ru.godl1ght.lab3.task3</package>
+    <superclass>Gun</superclass>
+    <description>
+        Класс, представляющий автоматическое оружие с определенной скорострельностью.
+        Наследуется от базового класса Gun.
+    </description>
+
+    <fields>
+        <field>
+            <name>fireRate</name>
+            <type>int</type>
+            <description>Скорострельность (выстрелов в секунду)</description>
+        </field>
+    </fields>
+
+    <constructors>
+        <constructor>
+            <description>
+                Конструктор без параметров: вместимость 30 патронов и скорострельность 30.
+            </description>
+        </constructor>
+
+        <constructor>
+            <params>
+                <param>
+                    <name>maxBullets</name>
+                    <type>int</type>
+                    <description>максимальное количество патронов</description>
+                </param>
+            </params>
+            <description>
+                Конструктор с указанием максимального числа патронов.
+                Скорострельность устанавливается как половина обоймы.
+            </description>
+            <throws>
+                <exception>
+                    <type>IllegalArgumentException</type>
+                    <condition>если maxBullets не положительное число</condition>
+                </exception>
+            </throws>
+        </constructor>
+
+        <constructor>
+            <params>
+                <param>
+                    <name>maxBullets</name>
+                    <type>int</type>
+                    <description>максимальное количество патронов</description>
+                </param>
+                <param>
+                    <name>fireRate</name>
+                    <type>int</type>
+                    <description>скорострельность (выстрелов в секунду)</description>
+                </param>
+            </params>
+            <description>
+                Конструктор с указанием максимального количества патронов и скорострельности.
+            </description>
+            <throws>
+                <exception>
+                    <type>IllegalArgumentException</type>
+                    <condition>если fireRate или maxBullets не положительные числа</condition>
+                </exception>
+            </throws>
+        </constructor>
+    </constructors>
+
+    <methods>
+        <method>
+            <name>shoot</name>
+            <description>
+                Производит выстрел с использованием скорострельности.
+                Вызывает родительский метод shoot() fireRate раз или пока не закончатся патроны.
+            </description>
+            <inheritedFrom>Gun</inheritedFrom>
+        </method>
+
+        <method>
+            <name>shootForSeconds</name>
+            <params>
+                <param>
+                    <name>seconds</name>
+                    <type>int</type>
+                    <description>количество секунд стрельбы</description>
+                </param>
+            </params>
+            <description>
+                Производит стрельбу в течение указанного количества секунд.
+            </description>
+            <throws>
+                <exception>
+                    <type>IllegalArgumentException</type>
+                    <condition>если seconds не положительное число</condition>
+                </exception>
+            </throws>
+        </method>
+
+        <method>
+            <name>getFireRate</name>
+            <returns>
+                <type>int</type>
+                <description>скорострельность (выстрелов в секунду)</description>
+            </returns>
+            <description>
+                Возвращает значение скорострельности.
+            </description>
+        </method>
+    </methods>
+</class>

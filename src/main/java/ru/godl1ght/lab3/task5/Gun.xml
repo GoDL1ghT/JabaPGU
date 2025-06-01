@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+    <name>Gun</name>
+    <description>Класс, представляющий огнестрельное оружие с ограниченным количеством патронов.</description>
+
+    <constructors>
+        <constructor>
+            <description>Создает оружие с указанным количеством патронов</description>
+            <params>
+                <param name="bullets" type="int">начальное количество патронов</param>
+            </params>
+            <throws>
+                <exception type="IllegalArgumentException">если количество патронов отрицательное</exception>
+            </throws>
+        </constructor>
+        <constructor>
+            <description>Создает оружие с 5 патронами по умолчанию</description>
+        </constructor>
+    </constructors>
+
+    <methods>
+        <method>
+            <name>shoot</name>
+            <description>Совершает выстрел, если есть патроны</description>
+        </method>
+        <method>
+            <name>getBullets</name>
+            <description>Возвращает текущее количество патронов</description>
+            <returns>количество оставшихся патронов</returns>
+        </method>
+    </methods>
+</class>

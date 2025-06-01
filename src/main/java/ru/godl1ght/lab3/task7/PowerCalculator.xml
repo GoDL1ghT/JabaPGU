@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classes>
+    <class>
+        <name>PowerCalculator</name>
+        <description>Класс для вычисления степени числа. Позволяет пользователю ввести число и степень, в которую его
+            нужно возвести.
+        </description>
+        <methods>
+            <method>
+                <name>main</name>
+                <description>Основной метод программы. Запрашивает у пользователя число и степень, вычисляет и выводит
+                    результат.
+                </description>
+                <params>
+                    <param>
+                        <name>args</name>
+                        <description>аргументы командной строки (не используются)</description>
+                    </param>
+                </params>
+            </method>
+            <method>
+                <name>getIntInput</name>
+                <description>Метод для безопасного запроса целого числа у пользователя. Повторяет запрос до тех пор,
+                    пока не будет введено корректное целое число.
+                </description>
+                <params>
+                    <param>
+                        <name>scanner</name>
+                        <description>объект Scanner для чтения ввода</description>
+                    </param>
+                    <param>
+                        <name>prompt</name>
+                        <description>приглашение для ввода</description>
+                    </param>
+                </params>
+                <returns>введенное пользователем целое число</returns>
+            </method>
+            <method>
+                <name>calculatePower</name>
+                <description>Вычисляет результат возведения числа в степень.</description>
+                <params>
+                    <param>
+                        <name>x</name>
+                        <description>основание степени</description>
+                    </param>
+                    <param>
+                        <name>y</name>
+                        <description>показатель степени</description>
+                    </param>
+                </params>
+                <returns>результат возведения x в степень y</returns>
+            </method>
+        </methods>
+    </class>
+</classes>

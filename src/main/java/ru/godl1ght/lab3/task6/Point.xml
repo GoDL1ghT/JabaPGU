@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+    <name>Point</name>
+    <package>ru.godl1ght.lab3.task6</package>
+    <description>
+        Класс, представляющий точку в двумерном пространстве с координатами (x, y).
+        Координаты должны быть в диапазоне от -1000 до 1000 и не могут быть NaN.
+    </description>
+
+    <constructors>
+        <constructor>
+            <params>
+                <param>
+                    <name>x</name>
+                    <type>double</type>
+                    <description>координата по оси X</description>
+                </param>
+                <param>
+                    <name>y</name>
+                    <type>double</type>
+                    <description>координата по оси Y</description>
+                </param>
+            </params>
+            <throws>
+                <exception>
+                    <type>IllegalArgumentException</type>
+                    <description>если координаты выходят за допустимые пределы или являются NaN</description>
+                </exception>
+            </throws>
+        </constructor>
+    </constructors>
+
+    <methods>
+        <method>
+            <name>getCoordinates</name>
+            <returns>
+                <type>String</type>
+                <description>строковое представление координат точки в формате {x;y}</description>
+            </returns>
+        </method>
+        <method>
+            <name>equals</name>
+            <params>
+                <param>
+                    <name>obj</name>
+                    <type>Object</type>
+                    <description>объект для сравнения</description>
+                </param>
+            </params>
+            <returns>
+                <type>boolean</type>
+                <description>true, если объекты равны, false в противном случае</description>
+            </returns>
+        </method>
+        <method>
+            <name>main</name>
+            <params>
+                <param>
+                    <name>args</name>
+                    <type>String[]</type>
+                    <description>аргументы командной строки (не используются)</description>
+                </param>
+            </params>
+            <description>Демонстрация работы с классом Point</description>
+        </method>
+    </methods>
+
+    <fields>
+        <field>
+            <name>x</name>
+            <type>double</type>
+            <description>координата по оси X</description>
+        </field>
+        <field>
+            <name>y</name>
+            <type>double</type>
+            <description>координата по оси Y</description>
+        </field>
+    </fields>
+</class>

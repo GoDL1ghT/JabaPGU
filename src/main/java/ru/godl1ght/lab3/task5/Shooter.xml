@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+    <name>Shooter</name>
+    <description>Класс, представляющий стрелка, который может быть вооружен.</description>
+
+    <constructors>
+        <constructor>
+            <description>Создает стрелка с указанным именем без оружия</description>
+            <params>
+                <param name="name" type="String">имя стрелка</param>
+            </params>
+            <throws>
+                <exception type="IllegalArgumentException">если имя null или пустое</exception>
+            </throws>
+        </constructor>
+    </constructors>
+
+    <methods>
+        <method>
+            <name>getName</name>
+            <description>Возвращает имя стрелка</description>
+            <returns>имя стрелка</returns>
+        </method>
+        <method>
+            <name>setName</name>
+            <description>Устанавливает новое имя стрелка</description>
+            <params>
+                <param name="name" type="String">новое имя стрелка</param>
+            </params>
+            <throws>
+                <exception type="IllegalArgumentException">если имя null или пустое</exception>
+            </throws>
+        </method>
+        <method>
+            <name>getWeapon</name>
+            <description>Возвращает оружие стрелка</description>
+            <returns>оружие стрелка (может быть null)</returns>
+        </method>
+        <method>
+            <name>setWeapon</name>
+            <description>Устанавливает оружие для стрелка</description>
+            <params>
+                <param name="weapon" type="Gun">оружие для установки</param>
+            </params>
+        </method>
+        <method>
+            <name>shoot</name>
+            <description>Совершает выстрел из оружия стрелка, если оно есть</description>
+        </method>
+        <method>
+            <name>main</name>
+            <description>Демонстрационный метод для тестирования функциональности классов Gun и Shooter</description>
+            <params>
+                <param name="args" type="String[]">аргументы командной строки</param>
+            </params>
+        </method>
+    </methods>
+</class>

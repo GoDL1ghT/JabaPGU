@@ -8,7 +8,9 @@ import java.util.Scanner;
  * <p>Содержит методы для корректного отображения количества этажей с правильным окончанием.
  */
 public class House {
-    /** Количество этажей в доме. Не может быть изменено после создания объекта. */
+    /**
+     * Количество этажей в доме. Не может быть изменено после создания объекта.
+     */
     private final int floors;
 
     /**
@@ -18,10 +20,10 @@ public class House {
      * @throws IllegalArgumentException если количество этажей меньше MIN_FLOORS
      */
     public House(int floors) {
-        if (floors < 1) {
+        if (floors < 1)
             throw new IllegalArgumentException(
                     "Количество этажей не может быть меньше 1");
-        }
+
         this.floors = floors;
     }
 
@@ -34,12 +36,12 @@ public class House {
         int lastTwoDigits = floors % 100;
         int lastDigit = floors % 10;
 
-        if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
+        if (lastTwoDigits >= 11 && lastTwoDigits <= 14)
             return floors + " этажами";
-        }
-        if (lastDigit == 1) {
+
+        if (lastDigit == 1)
             return floors + " этажом";
-        }
+
         return floors + " этажами";
     }
 
@@ -55,7 +57,6 @@ public class House {
      * @param args аргументы командной строки (не используются)
      */
     public static void main(String[] args) {
-        // Демонстрация работы класса
         House house1 = new House(1);
         House house5 = new House(5);
         House house11 = new House(11);
@@ -66,7 +67,6 @@ public class House {
         System.out.println(house11);
         System.out.println(house23);
 
-        // Ввод данных от пользователя
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Введите количество этажей для нового дома: ");
 

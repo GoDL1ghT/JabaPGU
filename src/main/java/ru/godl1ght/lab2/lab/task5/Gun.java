@@ -49,15 +49,9 @@ public class Gun {
         return bullets;
     }
 
-    /**
-     * Демонстрирует работу класса Gun.
-     *
-     * @param args аргументы командной строки (не используются)
-     */
     public static void main(String[] args) {
         Gun gun = new Gun(3);
 
-        // Стреляем 5 раз
         for (int i = 0; i < 5; i++) {
             gun.shoot();
         }

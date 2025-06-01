@@ -58,13 +58,7 @@ public class Time {
         }
     }
 
-    /**
-     * Основной метод для демонстрации работы класса.
-     *
-     * @param args аргументы командной строки (не используются)
-     */
     public static void main(String[] args) {
-        // Демонстрация работы с предопределенными значениями
         Time time1 = new Time(10);
         Time time2 = new Time(10000);
         Time time3 = new Time(100000);
@@ -73,7 +67,6 @@ public class Time {
         System.out.println("Время для 10.000 секунд: " + time2.getFormattedTime());
         System.out.println("Время для 100.000 секунд: " + time3.getFormattedTime());
 
-        // Демонстрация работы с вводом с клавиатуры
         try (Scanner scanner = new Scanner(System.in)) {
             Time userTime = readTimeFromKeyboard(scanner);
             System.out.println("Введенное время: " + userTime.getFormattedTime());

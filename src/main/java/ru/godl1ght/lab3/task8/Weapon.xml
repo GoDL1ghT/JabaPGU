@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+    <name>Weapon</name>
+    <description>Абстрактный класс, представляющий оружие. Содержит базовую функциональность для работы с
+        боеприпасами.
+    </description>
+    <constructors>
+        <constructor>
+            <name>Weapon</name>
+            <params>
+                <param>
+                    <name>ammo</name>
+                    <description>количество патронов, должно быть неотрицательным</description>
+                </param>
+            </params>
+            <throws>
+                <exception>IllegalArgumentException если количество патронов отрицательное</exception>
+            </throws>
+        </constructor>
+    </constructors>
+    <methods>
+        <method>
+            <name>shoot</name>
+            <description>Абстрактный метод для произведения выстрела. Должен быть реализован в подклассах.</description>
+        </method>
+        <method>
+            <name>load</name>
+            <description>Загружает новое количество патронов в оружие.</description>
+            <params>
+                <param>
+                    <name>ammo</name>
+                    <description>новое количество патронов, должно быть неотрицательным</description>
+                </param>
+            </params>
+            <returns>предыдущее количество патронов</returns>
+            <throws>
+                <exception>IllegalArgumentException если количество патронов отрицательное</exception>
+            </throws>
+        </method>
+    </methods>
+</class>s

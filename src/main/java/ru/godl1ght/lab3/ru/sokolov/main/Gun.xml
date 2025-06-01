@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classes>
+    <class>
+        <name>Gun</name>
+        <description>Класс, представляющий пистолет с определенным количеством патронов</description>
+        <constructors>
+            <constructor>
+                <description>Создает пистолет с указанным количеством патронов</description>
+                <param name="bullets">начальное количество патронов (неотрицательное)</param>
+                <throws>IllegalArgumentException если количество патронов отрицательное</throws>
+            </constructor>
+            <constructor>
+                <description>Создает пистолет с количеством патронов по умолчанию (5)</description>
+            </constructor>
+        </constructors>
+        <methods>
+            <method>
+                <name>shoot</name>
+                <description>Совершает выстрел, уменьшая количество патронов на 1</description>
+                <output>
+                    Выводит "Бах!" при успешном выстреле и "Клац!" при отсутствии патронов
+                </output>
+            </method>
+            <method>
+                <name>getBullets</name>
+                <description>Возвращает текущее количество патронов</description>
+                <returns>количество оставшихся патронов</returns>
+            </method>
+        </methods>
+        <example>
+            <code>
+                Gun gun = new Gun(3);
+                gun.shoot(); // Выведет "Бах!"
+                int bullets = gun.getBullets(); // Вернет 2
+            </code>
+        </example>
+    </class>
+</classes>
