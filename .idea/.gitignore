@@ -6,3 +6,12 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+.gitignore
+discord.xml
+gradle.xml
+jarRepositories.xml
+misc.xml
+uiDesigner.xml
+vcs.xml
+workspace.xml
